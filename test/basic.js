@@ -15,6 +15,14 @@ describe("basic", function(){
     done()
   })
 
-
+  it("should require type", function(done){
+    exhale.set({ type: "password_reset" }, function(errors, token){
+      should.not.exist(errors)
+      should.exist(token)
+      token.should.have.property("id")
+      token.should.have.property("type")
+      done()
+    })
+  })
 
 })
