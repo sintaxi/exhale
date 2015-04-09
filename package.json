@@ -6,6 +6,11 @@
   "scripts": {
     "test": "moch test"
   },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "redis": "*"
+  },
   "keywords": [
     "redis",
     "password",
@@ -13,5 +18,9 @@
     "token"
   ],
   "author": "Brock Whitten <brock@chloi.io>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sintaxi/exhale.git"
+  }
 }
