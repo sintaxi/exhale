@@ -15,13 +15,26 @@ describe("basic", function(){
     done()
   })
 
+  it("should error without payload", function(done){
+    exhale.set({}, function(errors, token){
+      should.not.exist(token)
+      should.exist(errors)
+      errors.should.have.property("details")
+      errors.should.have.property("messages")
+      errors.messages.should.have.lengthOf(1)
+      errors.details.should.have.property("payload", "must be present")
+      done()
+    })
+  })
+
   var id;
   it("should set token", function(done){
-    exhale.set({ type: "password_reset" }, function(errors, token){
+    exhale.set({ type: "password_reset", payload: {} }, function(errors, token){
       should.not.exist(errors)
       should.exist(token)
       token.should.have.property("id")
       token.should.have.property("type", "password_reset")
+      token.should.have.property("payload")
       id = token.id
       done()
     })
@@ -32,6 +45,7 @@ describe("basic", function(){
       should.exist(token)
       token.should.have.property("id", id)
       token.should.have.property("type", "password_reset")
+      token.should.not.have.property("expire")
       done()
     })
   })

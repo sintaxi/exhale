@@ -5,7 +5,7 @@ describe("expires", function(){
 
   var id;
   it("should set token", function(done){
-    exhale.set({ type: "password_reset", expire: 2 }, function(errors, token){
+    exhale.set({ type: "password_reset", expire: 2, payload: {} }, function(errors, token){
       should.not.exist(errors)
       should.exist(token)
       token.should.have.property("id")
@@ -20,6 +20,7 @@ describe("expires", function(){
       should.exist(token)
       token.should.have.property("id", id)
       token.should.have.property("type", "password_reset")
+      token.should.not.have.property("expire")
       done()
     })
   })
