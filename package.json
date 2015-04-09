@@ -4,7 +4,7 @@
   "description": "expiring token system for ephemeral tasks such as email verification and password reset",
   "main": "lib/exhale.js",
   "scripts": {
-    "test": "moch test"
+    "test": "mocha test"
   },
   "devDependencies": {
     "mocha": "*",
