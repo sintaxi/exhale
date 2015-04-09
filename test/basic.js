@@ -15,12 +15,23 @@ describe("basic", function(){
     done()
   })
 
-  it("should require type", function(done){
+  var id;
+  it("should get token", function(done){
     exhale.set({ type: "password_reset" }, function(errors, token){
       should.not.exist(errors)
       should.exist(token)
       token.should.have.property("id")
-      token.should.have.property("type")
+      token.should.have.property("type", "password_reset")
+      id = token.id
+      done()
+    })
+  })
+
+  it("should get token", function(done){
+    exhale.get(id, function(token){
+      should.exist(token)
+      token.should.have.property("id", id)
+      token.should.have.property("type", "password_reset")
       done()
     })
   })
