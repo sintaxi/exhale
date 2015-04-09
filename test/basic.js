@@ -15,14 +15,15 @@ describe("basic", function(){
     done()
   })
 
-  it("should error without payload", function(done){
+  it("should error without payload or type", function(done){
     exhale.set({}, function(errors, token){
       should.not.exist(token)
       should.exist(errors)
       errors.should.have.property("details")
       errors.should.have.property("messages")
-      errors.messages.should.have.lengthOf(1)
+      errors.messages.should.have.lengthOf(2)
       errors.details.should.have.property("payload", "must be present")
+      errors.details.should.have.property("type", "must be present")
       done()
     })
   })
