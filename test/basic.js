@@ -36,4 +36,13 @@ describe("basic", function(){
     })
   })
 
+  it("should remove token", function(done){
+    exhale.del(id, function(errors){
+      exhale.get(id, function(token){
+        should.not.exist(token)
+        done()
+      })
+    })
+  })
+
 })
