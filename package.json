@@ -1,6 +1,6 @@
 {
   "name": "exhale",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "expiring token system for ephemeral tasks such as email verification and password reset",
   "main": "lib/exhale.js",
   "scripts": {
