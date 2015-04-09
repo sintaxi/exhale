@@ -1,0 +1,17 @@
+{
+  "name": "exhale",
+  "version": "0.0.0",
+  "description": "expiring token system for ephemeral tasks such as email verification and password reset",
+  "main": "lib/exhale.js",
+  "scripts": {
+    "test": "moch test"
+  },
+  "keywords": [
+    "redis",
+    "password",
+    "reset",
+    "token"
+  ],
+  "author": "Brock Whitten <brock@chloi.io>",
+  "license": "ISC"
+}
