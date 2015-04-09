@@ -24,6 +24,7 @@
     "url": "https://github.com/sintaxi/exhale.git"
   },
   "dependencies": {
-    "thug": "^0.4.3"
+    "thug": "^0.4.3",
+    "node-uuid": "^1.4.3"
   }
 }
