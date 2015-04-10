@@ -8,9 +8,9 @@ describe("expires", function(){
     exhale.set({ type: "password_reset", expire: 2, payload: {} }, function(errors, token){
       should.not.exist(errors)
       should.exist(token)
-      token.should.have.property("id")
+      token.should.have.property("uuid")
       token.should.have.property("type", "password_reset")
-      id = token.id
+      id = token.uuid
       done()
     })
   })
@@ -18,7 +18,7 @@ describe("expires", function(){
   it("should get token", function(done){
     exhale.get(id, function(token){
       should.exist(token)
-      token.should.have.property("id", id)
+      token.should.have.property("uuid", id)
       token.should.have.property("type", "password_reset")
       token.should.not.have.property("expire")
       done()
@@ -28,7 +28,7 @@ describe("expires", function(){
   it("should get token", function(done){
     exhale.get(id, function(token){
       should.exist(token)
-      token.should.have.property("id", id)
+      token.should.have.property("uuid", id)
       token.should.have.property("type", "password_reset")
       done()
     })
