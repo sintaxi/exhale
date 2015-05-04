@@ -12,7 +12,7 @@
       console.log(token)
       // returns...
       {
-        id: "18b65620-ce44-47bc-81b7-c7a96d8e6516",
+        uuid: "18b65620-ce44-47bc-81b7-c7a96d8e6516",
         type: "password_reset",
         payload: { account: "abc" }
       }
@@ -22,7 +22,7 @@
       console.log(token)
       // returns...
       {
-        id: "18b65620-ce44-47bc-81b7-c7a96d8e6516",
+        uuid: "18b65620-ce44-47bc-81b7-c7a96d8e6516",
         type: "password_reset",
         payload: { account: "abc" }
       }
